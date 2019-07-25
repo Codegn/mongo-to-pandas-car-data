@@ -6,7 +6,7 @@ from from_jsons_to_classic_dataframe import *
 import datetime as dt
 
 # make conection with  database
-client = MongoClient('localhost', 27027)
+client = MongoClient('172.25.5.233', 27017)
 db = client['waze_bdt']
 collection_waze = db['tt']
 
