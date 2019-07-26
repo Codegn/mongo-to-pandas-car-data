@@ -16,8 +16,10 @@ epoch_ms_now = int(round(time.time()*1000))
 # write a query
 myquery = { "updateTime": { "$lt": epoch_ms_now } } # every document with updatetime lesser than now.
 
-# execute query
+# execute query, also time it
+start = time.time()
 mydocs = collection_waze.find(myquery)
+print(time.time() - start, ' seconds of wall time to get query done.')   
 
 df_tt, df_r = from_json_to_classic_df(mydocs)
 
