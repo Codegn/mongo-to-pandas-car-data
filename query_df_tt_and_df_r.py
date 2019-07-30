@@ -35,8 +35,8 @@ print(df_r.shape)
 # save to files
 currentDT = dt.datetime.now()
 
-df_tt.to_csv('./output/travel_times_' + currentDT.strftime("%Y_%m_%d_%H.%M.%S"))
-df_r.to_csv('./output/routes' + currentDT.strftime("%Y_%m_%d_%H.%M.%S"))
+df_tt.to_csv('./output/travel_times_' + currentDT.strftime("%Y_%m_%d_%H.%M.%S") + '.csv')
+df_r.to_csv('./output/routes_' + currentDT.strftime("%Y_%m_%d_%H.%M.%S") + '.csv')
 
 
 
