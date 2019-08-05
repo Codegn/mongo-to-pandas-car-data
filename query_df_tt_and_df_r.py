@@ -38,6 +38,7 @@ currentDT = dt.datetime.now()
 df_tt.to_csv('./output/travel_times_' + currentDT.strftime("%Y_%m_%d_%H.%M.%S") + '.csv')
 df_r.to_csv('./output/routes_' + currentDT.strftime("%Y_%m_%d_%H.%M.%S") + '.csv')
 
+print(time.time() - start, ' total time.') 
 
 
 # this is the "automatic" way, doesnt interprete well enought the files

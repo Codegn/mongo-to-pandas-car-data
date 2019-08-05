@@ -24,8 +24,11 @@ def from_json_to_classic_df(json_docs):
     dict_of_routes = {} # use a dict to not get duplicates
 
     for json_file in json_docs:
-
-        updateTime = dt.datetime.fromtimestamp(int(str(json_file['updateTime'])[:-3]), tz=pytz.timezone('America/Santiago'))
+        
+        if(str(json_file['updateTime'])[:-3]!=''):
+            updateTime = dt.datetime.fromtimestamp(int(str(json_file['updateTime'])[:-3]), tz=pytz.timezone('America/Santiago'))
+        else:
+            pass
 
         for route in json_file['routes']:
 
