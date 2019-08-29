@@ -47,4 +47,4 @@ def query_between_times(str_date_i, str_date_f):
     df_r.to_csv('./output/routes_' + 'from_' + str_date_i + '_to_' + str_date_f + '.csv')
  
 if __name__ == "__main__":
-    query_between_times('2019-08-27 00:00:00','2019-08-28 00:00:00')
+    query_between_times('2019-08-27 00:00:00','2019-08-29 00:00:00')
