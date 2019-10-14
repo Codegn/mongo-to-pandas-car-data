@@ -5,6 +5,7 @@ import time
 import pandas as pd
 import datetime as dt
 from time import strptime, strftime, mktime, gmtime
+import re
 
 def convert_timezone_to_utc_epoch(timestamp_string, timezone):
 
@@ -43,8 +44,8 @@ def query_between_times(str_date_i, str_date_f):
     print(df_r.shape)
 
     # save to files
-    df_tt.to_csv('./output/travel_times_' + 'from_' + str_date_i + '_to_' + str_date_f + '.csv')
-    df_r.to_csv('./output/routes_' + 'from_' + str_date_i + '_to_' + str_date_f + '.csv')
- 
+    df_tt.to_csv('./output/travel_times_' + 'from_' + re.sub('[^0-9]','', str_date_i) + '_to_' + re.sub('[^0-9]','', str_date_f) + '.csv')
+    df_r.to_csv('./output/routes_' + 'from_' + re.sub('[^0-9]','', str_date_i) + '_to_' + re.sub('[^0-9]','', str_date_f) + '.csv')
+
 if __name__ == "__main__":
-    query_between_times('2019-08-27 00:00:00','2019-08-29 00:00:00')
+    query_between_times('2019-09-23 00:00:00','2019-10-10 00:00:00')

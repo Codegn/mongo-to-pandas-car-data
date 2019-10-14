@@ -11,6 +11,10 @@ Create a persistent container to query mongo:
 3. use a query file
 4. restar container with: docker start query_mongo -ai
 
+If you want to use conda:
+1. conda create -n query_mongo pymongo=3.8.0 pandas pytz
+2. conda activate query_mongo
+
 Query files:
 1. python query_df_tt_and_df_r.py
 2. python query_df_tt_and_df_r_between_dates.py (modify dates inside)
